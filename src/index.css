@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@import 'aos/dist/aos.css';
+
+:root {
+  --blob-1: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.3), transparent 50%);
+  --blob-2: radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.25), transparent 50%);
+  --blob-3: radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.2), transparent 50%);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  font-family: "Outfit", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Background blobs */
+.blobs::before,
+.blobs::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: var(--blob-1), var(--blob-2), var(--blob-3);
+  filter: blur(60px);
+  z-index: -1;
+  animation: float 18s ease-in-out infinite;
+}
+.blobs::after {
+  animation-direction: reverse;
+  opacity: 0.8;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Letter reveal */
+.letter {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.letter.revealed {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1), opacity 0.6s;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+/* Card hover */
+.card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.25);
+}
+
+/* Glass effect */
+.glass {
+  background: linear-gradient(to bottom right, rgba(17, 24, 39, 0.5), rgba(17, 24, 39, 0.25));
+  backdrop-filter: blur(10px);
+}
+
+/* Active nav link underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Nice selection */
+::selection {
+  background: #6366f1;
+  color: white;
+}
+
+/* Small utilities */
+.text-gradient {
+  background: linear-gradient(90deg, #6366f1, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ring-soft {
+  box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.08);
+}
