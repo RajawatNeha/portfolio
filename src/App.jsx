@@ -68,13 +68,13 @@ const portfolioData = {
     },
     {
       icon: "phone-icon.svg",
-      text: "+1 (123) 456-7890",
+      text: "91 9958245470",
       href: null,
     },
     {
       icon: "linkedin-icon.svg",
       text: "LinkedIn Profile",
-      href: "https://www.linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/neha-rajawat-9693192b1",
     },
   ],
 };
@@ -232,7 +232,7 @@ export default function App() {
             className="mt-6 max-w-3xl mx-auto text-base md:text-lg text-slate-300"
             data-aos="fade-up"
           >
-            B.E. in Computer Science with AI • Passionate about building impactful
+            B.TECH in Computer Science with AI • Passionate about building impactful
             solutions.
           </p>
 
@@ -298,7 +298,7 @@ export default function App() {
                 <div>
                   <strong>Education</strong>
                   <br />
-                  B.E. Computer Science with AI
+                  B.TECH Computer Science with AI
                 </div>
               </div>
               <div className="flex items-start gap-2">
