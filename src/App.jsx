@@ -68,7 +68,7 @@ const portfolioData = {
     },
     {
       icon: "phone-icon.svg",
-      text: "91 9958245470",
+      text: "+91 9958245470",
       href: null,
     },
     {
@@ -308,9 +308,9 @@ export default function App() {
                   className="h-5 w-5 mt-0.5 text-indigo-500"
                 />
                 <div>
-                  <strong>Experience</strong>
+                  <strong>experience</strong>
                   <br />
-                  2+ Years Coding
+                  undergrad
                 </div>
               </div>
               <div className="flex items-start gap-2">
